@@ -6,7 +6,7 @@ class GamesSpider(scrapy.Spider):
     allowed_domains = ["lista.mercadolivre.com.br"]
     start_urls = ["https://lista.mercadolivre.com.br/jogo-nintendo-switch#D[A:jogo%20nintendo%20switch]"]
     page_count = 1
-    max_page = 2
+    max_page = 3
 
     def parse(self, response):
         
@@ -26,8 +26,8 @@ class GamesSpider(scrapy.Spider):
                 'new_money': prices[1] if len (prices) > 1 else None
             }
 
-        if self.page_count > self.max_page:
-            next_page = response.css('li.andes-pagination__button.andes-pagination__button--next::href').get()
+        if self.page_count < self.max_page:
+            next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
             if next_page:
                 self.page_count += 1
                 yield scrapy.Request(url=next_page, callback=self.parse)
