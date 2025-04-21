@@ -19,7 +19,7 @@ O projeto consiste em três partes principais:
 
 ## ⚙️ Tecnologias Utilizadas
 
-- **Python 3.x**
+- **Python 3.12.1**
 - **Scrapy** - Para coletar dados de páginas do Mercado Livre.
 - **SQLite** - Para armazenar os dados coletados.
 - **Pandas** - Para manipulação e análise dos dados.
