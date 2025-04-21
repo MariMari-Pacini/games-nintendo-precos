@@ -1,4 +1,4 @@
-Web Scraping de Jogos de Nintendo Switch no Mercado Livre
+# Web Scraping de Jogos de Nintendo Switch no Mercado Livre
 
 Este projeto tem como objetivo coletar, analisar e visualizar os preços de jogos para Nintendo Switch no Mercado Livre, usando uma abordagem completa com *web scraping*, armazenamento de dados em banco de dados SQLite e visualização interativa com o Streamlit.
 
@@ -32,11 +32,11 @@ O projeto consiste em três partes principais:
    ```bash
    git clone https://github.com/seu-usuario/nintendo-games-precos.git
    cd nintendo-games-precos
-
+```
 ## 2. Instale as Dependências
 Utilize um ambiente virtual (recomendado):
 
-```
+```bash
 python -m venv .venv
 .venv\Scripts\activate  # Para Windows
 source .venv/bin/activate  # Para Linux/Mac
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ## 3. Execute o Scrapy para Coletar Dados
 Para coletar os dados de jogos Nintendo Switch:
 
-```
+```bash
 scrapy crawl games
 ```
 Isso irá rodar o spider e coletar os dados, pode salvar em um arquivo JSON ou diretamente em um banco de dados SQLite, dependendo da configuração do projeto, com -o nome do arquivo.json/csv.
@@ -54,7 +54,7 @@ Isso irá rodar o spider e coletar os dados, pode salvar em um arquivo JSON ou d
 ## 4. Inicie o Painel Interativo no Streamlit
 Após a coleta dos dados, inicie o painel do Streamlit:
 
-```
+```bash
 streamlit run app.py
 ```
 
